@@ -70,10 +70,13 @@ def ctftime_job():
 
 # print(ctf_events_message)
 # print(ctfs)
+  
+# Just use cronjob or anacron [persists over reboots]
 ctftime_job()
 
-scheduler = BlockingScheduler()
-# every Friday at 7 PM
-scheduler.add_job(ctftime_job, trigger=CronTrigger(hour=19, day_of_week=4)) # 6=Sunday
+# When not using cronjob
+# scheduler = BlockingScheduler()
+## every Friday at 7 PM
+# scheduler.add_job(ctftime_job, trigger=CronTrigger(hour=19, day_of_week=4)) # 6=Sunday
 # scheduler.add_job(ctftime_job, trigger=CronTrigger(hour=17, minute=38, day_of_week=6)) 
-scheduler.start()
+# scheduler.start()
